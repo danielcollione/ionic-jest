@@ -1,0 +1,7 @@
+{
+  "name": "IonicJest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
