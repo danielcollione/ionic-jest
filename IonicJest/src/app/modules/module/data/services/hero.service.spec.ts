@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TestService } from './test.service';
+import { HeroService } from './hero.service';
 
 import {
   BrowserDynamicTestingModule,
@@ -8,16 +8,16 @@ import {
 } from '@angular/platform-browser-dynamic/testing';
 
 describe('TestService', () => {
-  let service: TestService;
+  let service: HeroService;
 
   beforeEach(() => {
     TestBed.initTestEnvironment(
       BrowserDynamicTestingModule,
       platformBrowserDynamicTesting()
     ).configureTestingModule({
-      providers: [TestService],
+      providers: [HeroService],
     });
-    service = TestBed.inject(TestService);
+    service = TestBed.inject(HeroService);
   });
 
   it('should be created', () => {

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  hero_api: 'https://superheroapi.com/api/access-token',
 };
