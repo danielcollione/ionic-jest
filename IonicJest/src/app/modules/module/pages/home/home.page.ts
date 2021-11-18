@@ -8,12 +8,11 @@ import { HeroService } from '../../data/services/hero.service';
 })
 export class HomePage {
   searchName: string;
-  constructor(private heroService: HeroService) {
+  constructor(private hero: HeroService) {
     this.search();
   }
 
   search() {
-    this.heroService.getHeroByName(`hulk`).subscribe();
-    console.log(this.searchName);
+    this.hero.getHeroByName('hulk').subscribe();
   }
 }

@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './modules/module/state/store/app.state';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/interceptors/auth-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     StoreModule.forRoot({ app: appReducer }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
