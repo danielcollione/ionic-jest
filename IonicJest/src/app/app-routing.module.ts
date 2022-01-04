@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'advantages-club',
+    loadChildren: () => import('./modules/module/pages/advantages-club/advantages-club.module').then( m => m.AdvantagesClubModule)
+  },
 ];
 
 @NgModule({
