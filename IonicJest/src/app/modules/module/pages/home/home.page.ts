@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeroService } from '../../data/services/hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,9 @@ import { HeroService } from '../../data/services/hero.service';
 })
 export class HomePage {
   searchName: string;
-  constructor(private hero: HeroService) {
-    this.search();
-  }
+  constructor(private router: Router) {}
 
-  search() {
-    this.hero.getHeroByName('hulk').subscribe();
+  onAdvantagesClub() {
+    this.router.navigateByUrl('/advantages-club');
   }
 }
