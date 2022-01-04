@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import {AppSafeUrl} from "../../../../../pipes/dom-sanitizer/safe-url.pipe";
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
-  declarations: [HomePage],
+  declarations: [HomePage, AppSafeUrl],
+  exports: [AppSafeUrl],
 })
 export class HomePageModule {}
